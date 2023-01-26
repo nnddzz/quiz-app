@@ -60,6 +60,16 @@ const showQuestion = (questionNumber) => {
       `
     )
     .join("");
+
+  selectAnswer();
+};
+
+const selectAnswer = () => {
+  answerConatiner.querySelectorAll("input").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      selectedAnswer = e.target.value;
+    });
+  });
 };
 
 showQuestion(questionIndex);

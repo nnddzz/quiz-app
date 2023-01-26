@@ -46,6 +46,7 @@ body {
 
 .game {
   /* display: none; */
+  background-color: #fff;
 }
 
 .result {
