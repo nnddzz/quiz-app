@@ -48,6 +48,7 @@ let selectedAnswer = true;
 
 // show questions function
 const showQuestion = (questionNumber) => {
+  selectedAnswer = null;
   question.textContent = data[questionNumber].question;
   answerConatiner.innerHTML = data[questionNumber].answers
     .map(
@@ -72,4 +73,17 @@ const selectAnswer = () => {
   });
 };
 
+const submitAnswer = () => {
+  submit.addEventListener("click", () => {
+    if (selectedAnswer !== null) {
+      selectedAnswer === true ? correctCount++ : wrongCount++;
+      questionIndex++;
+      showQuestion(questionIndex);
+    } else {
+      alert("Tolong isi jawaban terlebih dahulu.");
+    }
+  });
+};
+
 showQuestion(questionIndex);
+submitAnswer();
