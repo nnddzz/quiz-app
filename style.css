@@ -1,5 +1,5 @@
 body {
-  background-color: #22223b;
+  background-color: #00425a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,7 +29,7 @@ body {
 }
 
 .submit {
-  background-color: rebeccapurple;
+  background-color: #1f8a70;
   color: #fff;
   border: none;
   width: 100%;
@@ -69,7 +69,7 @@ body {
 
 .play {
   color: #fff;
-  background-color: rebeccapurple;
+  background-color: #1f8a70;
   padding: 10px 20px;
   cursor: pointer;
   border: none;
