@@ -30,6 +30,26 @@ const data = [
       { answer: "Element selector", isCorrect: false },
     ],
   },
+  {
+    id: 4,
+    question: "Tag HTML untuk menampilkan gambar adalah?",
+    answers: [
+      { answer: "h1", isCorrect: false },
+      { answer: "code", isCorrect: false },
+      { answer: "img", isCorrect: true },
+      { answer: "canvas", isCorrect: false },
+    ],
+  },
+  {
+    id: 5,
+    question: "Berikut ini adalah tipe data dalam javascript, kecuali...",
+    answers: [
+      { answer: "array", isCorrect: false },
+      { answer: "char", isCorrect: true },
+      { answer: "object", isCorrect: false },
+      { answer: "string", isCorrect: false },
+    ],
+  },
 ];
 
 // global variable
