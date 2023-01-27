@@ -46,15 +46,43 @@ let wrongCount = 0;
 let total = 0;
 let selectedAnswer = true;
 
+// play again function
+const playAgain = () => {
+  questionIndex = 0;
+  correctCount = 0;
+  wrongCount = 0;
+  total = 0;
+  showQuestion(questionIndex);
+};
+
+play.addEventListener("click", () => {
+  resultScreen.style.display = "none";
+  gameScreen.style.display = "block";
+  playAgain();
+});
+
 // show result function
 const showResult = () => {
   resultScreen.style.display = "block";
   gameScreen.style.display = "none";
+
+  resultScreen.querySelector(
+    ".correct"
+  ).textContent = `Jawaban Benar: ${correctCount}`;
+
+  resultScreen.querySelector(
+    ".wrong"
+  ).textContent = `Jawaban Salah: ${wrongCount}`;
+
+  resultScreen.querySelector(".score").textContent = `Skor: ${
+    (correctCount - wrongCount) * 10
+  }`;
 };
 
 // show questions function
 const showQuestion = (questionNumber) => {
   if (questionIndex === data.length) return showResult();
+
   selectedAnswer = null;
   questions.textContent = data[questionNumber].question;
   answerConatiner.innerHTML = data[questionNumber].answers
@@ -85,7 +113,7 @@ const selectAnswer = () => {
 const submitAnswer = () => {
   submit.addEventListener("click", () => {
     if (selectedAnswer !== null) {
-      selectedAnswer === true ? correctCount++ : wrongCount++;
+      selectedAnswer === "true" ? correctCount++ : wrongCount++;
       questionIndex++;
       showQuestion(questionIndex);
     } else {
