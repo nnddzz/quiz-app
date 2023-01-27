@@ -35,7 +35,7 @@ const data = [
 // global variable
 const gameScreen = document.querySelector(".game");
 const resultScreen = document.querySelector(".result");
-const question = document.querySelector(".question");
+const questions = document.querySelector(".question");
 const answerConatiner = document.querySelector(".answers");
 const submit = document.querySelector(".submit");
 const play = document.querySelector(".play");
@@ -46,10 +46,17 @@ let wrongCount = 0;
 let total = 0;
 let selectedAnswer = true;
 
+// show result function
+const showResult = () => {
+  resultScreen.style.display = "block";
+  gameScreen.style.display = "none";
+};
+
 // show questions function
 const showQuestion = (questionNumber) => {
+  if (questionIndex === data.length) return showResult();
   selectedAnswer = null;
-  question.textContent = data[questionNumber].question;
+  questions.textContent = data[questionNumber].question;
   answerConatiner.innerHTML = data[questionNumber].answers
     .map(
       (item, index) =>
@@ -65,6 +72,7 @@ const showQuestion = (questionNumber) => {
   selectAnswer();
 };
 
+// select answer function
 const selectAnswer = () => {
   answerConatiner.querySelectorAll("input").forEach((el) => {
     el.addEventListener("click", (e) => {
@@ -73,6 +81,7 @@ const selectAnswer = () => {
   });
 };
 
+// submit answer functions
 const submitAnswer = () => {
   submit.addEventListener("click", () => {
     if (selectedAnswer !== null) {

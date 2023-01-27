@@ -63,6 +63,10 @@ body {
   color: green;
 }
 
+.wrong {
+  color: rgb(255, 0, 0);
+}
+
 .play {
   color: #fff;
   background-color: rebeccapurple;
